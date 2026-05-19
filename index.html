@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doppio Jundiaí – Apartamentos com living com pé-direito duplo</title>
+  <meta name="description" content="Doppio Jundiaí - Apartamentos de 156 a 442m² com living com pé-direito duplo em Campos Elísios, Jundiaí. Torre única e exclusiva.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://doppiojundiai.com.br/wp-content/uploads/2026/04/cropped-doppio-fav-32x32.png.webp" sizes="32x32">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="Doppio Jundiaí">
+        <img src="https://doppiojundiai.com.br/wp-content/uploads/2026/04/Vector.png.webp" alt="Doppio Jundiaí" id="logo-img">
+      </a>
+
+      <nav class="nav" id="main-nav" aria-label="Navegação principal">
+        <a href="#projeto" class="nav-link">O Projeto</a>
+        <a href="#institucional" class="nav-link">Institucional</a>
+        <a href="#contato" class="nav-link">Contato</a>
+        <button class="btn-nav" id="btn-saiba-mais" data-scroll-to="contato">Saiba mais</button>
+      </nav>
+
+      <div class="partners-logos" id="partner-logos">
+        <img src="https://doppiojundiai.com.br/wp-content/uploads/2026/04/Construtora-marino.png.webp" alt="Construtora Marino" class="partner-logo">
+        <div class="divider-v"></div>
+        <img src="https://doppiojundiai.com.br/wp-content/uploads/2026/04/Logo-REM.png.webp" alt="REM" class="partner-logo">
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true">
+    <nav aria-label="Navegação mobile">
+      <a href="#projeto" class="mobile-link">O Projeto</a>
+      <a href="#institucional" class="mobile-link">Institucional</a>
+      <a href="#contato" class="mobile-link">Contato</a>
+      <button class="btn-nav" data-scroll-to="contato">Saiba mais</button>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ═══════ HERO ═══════ -->
+    <section class="hero" id="projeto" aria-label="Hero">
+      <div class="hero__bg" aria-hidden="true">
+        <img src="https://doppiojundiai.com.br/wp-content/uploads/2026/04/ImageWithFallback-1-e1775016353737.png" alt="" class="hero__bg-img" fetchpriority="high">
+        <div class="hero__overlay hero__overlay--left"></div>
+        <div class="hero__overlay hero__overlay--bottom"></div>
+        <div class="hero__overlay hero__overlay--warm"></div>
+      </div>
+
+      <div class="container hero__content">
+        <!-- Left: Text -->
+        <div class="hero__text anim-fade-up">
+          <div class="hero__tag">breve Lançamento</div>
+          <img src="https://doppiojundiai.com.br/wp-content/uploads/2026/04/Vector-1.png.webp" alt="Doppio" class="hero__logo-big">
+          <h1 class="hero__headline">
+            <span class="hero__line">MAIS QUE</span>
+            <span class="hero__script">amplitude</span>
+            <span class="hero__line">UMA NOVA</span>
+            <span class="hero__line">PERSPECTIVA</span>
+            <span class="hero__line">DE MORAR.</span>
+          </h1>
+          <p class="hero__location">CAMPOS ELÍSIOS – JUNDIAÍ</p>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="hero__form anim-fade-up anim-delay-1" id="contato">
+          <div class="form-card form-card--dark">
+            <p class="form-card__heading">ACESSO EXCLUSIVO<br>AO LANÇAMENTO</p>
+            <form class="lead-form" id="form-hero" novalidate>
+              <div class="form-field">
+                <input type="text" placeholder="Nome" autocomplete="name" required id="hero-name">
+              </div>
+              <div class="form-field">
+                <input type="email" placeholder="Email" autocomplete="email" required id="hero-email">
+              </div>
+              <div class="form-field">
+                <input type="tel" placeholder="Telefone" autocomplete="tel" required id="hero-phone">
+              </div>
+              <button type="submit" class="btn-submit btn-submit--gold" id="hero-submit">
+                SOLICITAR ACESSO EXCLUSIVO
+              </button>
+              <label class="form-terms">
+                <input type="checkbox" id="hero-terms">
+                <span>Solicite acesso à lista restrita que terão prioridade nas melhores condições de lançamento.</span>
+              </label>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ POSITIONING (Torre Única) ═══════ -->
+    <section class="positioning" id="institucional" aria-label="Torre Única e Exclusiva">
+      <div class="positioning__bg" aria-hidden="true">
+        <img src="https://doppiojundiai.com.br/wp-content/uploads/2026/04/b996f78fcccfc62dc503510b653fc40f47b26660-scaled.png.webp" alt="">
+        <div class="positioning__bg-overlay"></div>
+      </div>
+
+      <div class="container positioning__inner reveal-section">
+        <p class="positioning__title">
+          TORRE ÚNICA E <span class="script-text">exclusiva</span>
+        </p>
+
+        <div class="positioning__body">
+          <!-- Render with overlay text -->
+          <div class="positioning__render">
+            <img src="https://doppiojundiai.com.br/wp-content/uploads/2026/04/Frame-14.png.webp" alt="Render do edifício Doppio Jundiaí">
+          </div>
+
+          <!-- Specs -->
+          <div class="positioning__specs">
+            <div class="spec-block">
+              <p class="spec-block__type">Apartamentos tipo</p>
+              <p class="spec-block__area">156 a 210 m²</p>
+              <p class="spec-block__detail">3 e 4 suítes<br>3 vagas</p>
+            </div>
+            <div class="spec-block">
+              <p class="spec-block__type">Coberturas</p>
+              <p class="spec-block__area">307 a 442 m²</p>
+              <p class="spec-block__detail">4 suítes<br>3 a 5 vagas</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="positioning__cta">
+          <button class="btn-outline-light" data-scroll-to="contato" id="btn-positioning-cta">
+            SOLICITAR ACESSO EXCLUSIVO
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ INCORPORADORAS ═══════ -->
+    <section class="incorporadoras reveal-section" aria-label="Incorporadoras">
+      <div class="incorporadoras__bg" aria-hidden="true">
+        <img src="https://doppiojundiai.com.br/wp-content/uploads/2026/04/1d9a8e9df66ed5251b44cbc75fb04211f463ede7.png.webp" alt="">
+      </div>
+
+      <div class="container incorporadoras__inner">
+        <!-- Heading -->
+        <div class="incorporadoras__heading">
+          <h2>A união de duas<br><span class="script-text">Referências</span> da construção</h2>
+          <p>O Doppio Jundiaí nasce da parceria entre as construtoras Construtora Marino e REM, duas empresas reconhecidas pela qualidade de seus projetos e pelo compromisso com excelência construtiva.</p>
+        </div>
+
+        <!-- Video -->
+        <div class="incorporadoras__video" id="video-wrap" role="button" tabindex="0" aria-label="Assistir vídeo">
+          <img src="https://doppiojundiai.com.br/wp-content/uploads/2026/04/ImageWithFallback.png.webp" alt="Vídeo do empreendimento">
+          <div class="play-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg>
+          </div>
+        </div>
+
+        <!-- Logos Card -->
+        <div class="incorporadoras__card">
+          <!-- Marino -->
+          <div class="incorporadoras__col">
+            <img src="https://doppiojundiai.com.br/wp-content/uploads/2026/04/Construtora-marino.png.webp" alt="Construtora Marino" class="incorporadoras__logo">
+            <div class="incorporadoras__hdiv"></div>
+            <div class="incorporadoras__text">
+              <p>Com <strong>45 anos de atuação</strong>, uma história marcada por <strong>excelência e credibilidade</strong> na entrega de cada projeto. Uma empresa com experiência técnica especializada e foco em inovação e qualidade.</p>
+              <p>Projetos de grande porte nos segmentos: <strong>RESIDENCIAL, COMERCIAL, INDUSTRIAL e HOSPITALAR</strong> fazem da Construtora Marino uma referência no mercado da construção civil.</p>
+              <p>Quando o assunto é obra, temos orgulho em dizer que <strong>entregamos tecnologia de ponta e soluções personalizadas</strong> através de uma equipe completa e especializada.</p>
+              <p class="stat"><strong>42 EMPREENDIMENTOS</strong><br>entregues, entre residenciais e comerciais</p>
+              <p class="stat"><strong>570 MIL M²<br>CONSTRUÍDOS</strong><br>nos segmentos residencial, comercial, hospitalar e shoppings</p>
+              <p class="stat"><strong>2.000 UNIDADES</strong></p>
+              <p class="stat"><strong>R$ 500 MILHÕES</strong><br>em Land Bank de terrenos</p>
+            </div>
+          </div>
+
+          <div class="incorporadoras__vdiv" aria-hidden="true"></div>
+
+          <!-- REM -->
+          <div class="incorporadoras__col">
+            <img src="https://doppiojundiai.com.br/wp-content/uploads/2026/04/Logo-REM.png.webp" alt="REM" class="incorporadoras__logo">
+            <div class="incorporadoras__hdiv"></div>
+            <div class="incorporadoras__text">
+              <p>A REM Construtora e Incorporadora atua há <strong>mais de 35 anos no mercado de construção civil.</strong> Derivada de uma longa e séria tradição empresarial familiar, <strong>a REM traz em seu DNA o know-how e a seriedade de quem honra seus compromissos.</strong></p>
+              <p>Ela tem o trunfo de aliar <strong>tradição</strong> e <strong>inovação</strong> para oferecer excelência em acabamentos, resultados e qualidade, <strong>além de segurança e confiança em cada uma de suas entregas.</strong></p>
+              <p>Com o projeto Altitude Jardins por Artefacto, a REM Construtora <strong>foi a vencedora do Prêmio Master Imobiliário 2025</strong>, na categoria profissional soluções arquitetônicas.</p>
+              <p class="stat"><strong>56 EMPREENDIMENTOS</strong><br>entregues, entre residenciais, comerciais, agências bancárias e galpões</p>
+              <p class="stat"><strong>630 MIL M²<br>CONSTRUÍDOS</strong><br>ou em construção</p>
+              <p class="stat"><strong>4.000 UNIDADES</strong></p>
+              <p class="stat"><strong>R$ 1 BILHÃO</strong><br>em Land Bank de terrenos</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Partnership text -->
+        <div class="incorporadoras__partnership">
+          <p>Com gestão familiar e visão de longo prazo, <strong>REM e Marino reúnem décadas de experiência</strong> no mercado imobiliário de São Paulo, construindo uma reputação baseada em <strong>qualidade construtiva, escolha criteriosa de localizações e consistência na entrega de empreendimentos.</strong></p>
+          <p>Juntas, apresentam um projeto que traz um novo patamar de sofisticação para Jundiaí: <strong>Doppio Jundiaí.</strong></p>
+          <button class="btn-outline-dark" data-scroll-to="contato" id="btn-inc-cta">
+            SOLICITAR ACESSO EXCLUSIVO
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ CTA FINAL ═══════ -->
+    <section class="cta-final reveal-section" aria-label="CTA Final">
+      <div class="cta-final__bg" aria-hidden="true">
+        <img src="https://doppiojundiai.com.br/wp-content/uploads/2026/04/Container.png.webp" alt="">
+        <div class="cta-final__overlay"></div>
+      </div>
+
+      <div class="container cta-final__content">
+        <div class="cta-final__text">
+          <p class="cta-final__title">
+            ANTECIPE-SE AO<br><span class="script-text">lançamento</span>
+          </p>
+          <p class="cta-final__sub">
+            <strong>Preencha o formulário</strong> e solicite acesso antecipado às informações do lançamento.
+          </p>
+        </div>
+
+        <div class="cta-final__form">
+          <div class="form-card form-card--brown">
+            <p class="form-card__heading">ACESSO EXCLUSIVO<br>AO LANÇAMENTO</p>
+            <form class="lead-form" id="form-cta" novalidate>
+              <div class="form-field">
+                <input type="text" placeholder="Nome" autocomplete="name" required id="cta-name">
+              </div>
+              <div class="form-field">
+                <input type="email" placeholder="Email" autocomplete="email" required id="cta-email">
+              </div>
+              <div class="form-field">
+                <input type="tel" placeholder="Telefone" autocomplete="tel" required id="cta-phone">
+              </div>
+              <button type="submit" class="btn-submit btn-submit--white" id="cta-submit">
+                SOLICITAR ACESSO EXCLUSIVO
+              </button>
+              <label class="form-terms">
+                <input type="checkbox" id="cta-terms">
+                <span>Solicite acesso à lista restrita que terão prioridade nas melhores condições de lançamento.</span>
+              </label>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__col">
+          <h4>EMPREENDIMENTO</h4>
+          <div class="footer__logos">
+            <img src="https://doppiojundiai.com.br/wp-content/uploads/2026/04/Construtora-marino-1.png.webp" alt="Construtora Marino">
+            <img src="https://doppiojundiai.com.br/wp-content/uploads/2026/04/Layer_1.png.webp" alt="REM">
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>LOCALIZAÇÃO</h4>
+          <p>Campos Elísios – Jundiaí – SP</p>
+        </div>
+        <div class="footer__col">
+          <h4>REDES SOCIAIS</h4>
+          <a href="https://instagram.com/doppiojundiai" target="_blank" rel="noopener noreferrer" class="footer__social" id="social-instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="white" stroke-width="2"></rect>
+              <circle cx="12" cy="12" r="4" stroke="white" stroke-width="2"></circle>
+              <circle cx="17.5" cy="6.5" r="1.5" fill="white"></circle>
+            </svg>
+            @doppiojundiai
+          </a>
+        </div>
+      </div>
+
+      <p class="footer__legal">Registro de Incorporação R.3 da matrícula 189.290, no 1º Oficial de Registro de Imóveis de Jundiaí/SP em 12/03/2026. MARINO JUNDIAI EMPREENDIMENTO IMOBILIARIO SPE LTDA, CNPJ nº 51.854.681/0001-96</p>
+      <p class="footer__copy">© 2026 Doppio Jundiaí. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
