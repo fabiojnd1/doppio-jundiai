@@ -69,16 +69,50 @@ document.addEventListener('DOMContentLoaded', () => {
   const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbx_hBPEYV-ew3e9uBsJ31zizb8jF7gAvxHKnnkX1_KXd0qNdLpCmyweNzVkEC9MhaxYYg/exec';
 
   document.querySelectorAll('.lead-form').forEach(form => {
+    const nomeInput = form.querySelector('input[type="text"]');
+    const emailInput = form.querySelector('input[type="email"]');
+    const telInput = form.querySelector('input[type="tel"]');
+
+    // Remove invalid style dynamically on input
+    [nomeInput, emailInput, telInput].forEach(input => {
+      if (input) {
+        input.addEventListener('input', () => {
+          input.classList.remove('invalid');
+        });
+      }
+    });
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+
+      // Simple client-side validation
+      let isValid = true;
+      
+      if (nomeInput && !nomeInput.value.trim()) {
+        nomeInput.classList.add('invalid');
+        isValid = false;
+      }
+      
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (emailInput && !emailRegex.test(emailInput.value.trim())) {
+        emailInput.classList.add('invalid');
+        isValid = false;
+      }
+
+      const phoneDigits = telInput ? telInput.value.replace(/\D/g, '') : '';
+      if (telInput && phoneDigits.length < 10) {
+        telInput.classList.add('invalid');
+        isValid = false;
+      }
+
+      if (!isValid) {
+        return; // Stop submission if fields are invalid
+      }
+
       const btn = form.querySelector('.btn-submit');
       const orig = btn.textContent;
       btn.textContent = 'ENVIANDO...';
       btn.disabled = true;
-
-      const nomeInput = form.querySelector('input[type="text"]');
-      const emailInput = form.querySelector('input[type="email"]');
-      const telInput = form.querySelector('input[type="tel"]');
 
       const urlEncodedData = new URLSearchParams();
       urlEncodedData.append('nome', nomeInput ? nomeInput.value : '');
@@ -133,5 +167,20 @@ document.addEventListener('DOMContentLoaded', () => {
         heroImg.style.transform = `scale(1.05) translateY(${y * 0.15}px)`;
       }
     }, { passive: true });
+  }
+
+  // --- Video player trigger ---
+  const videoWrap = document.getElementById('video-wrap');
+  if (videoWrap) {
+    videoWrap.addEventListener('click', () => {
+      videoWrap.innerHTML = `<iframe width="100%" style="aspect-ratio: 16/9; display: block; border-radius: 16px; border: none;" src="https://www.youtube.com/embed/1U55OffpfOI?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+    });
+    // Keyboard support
+    videoWrap.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        videoWrap.click();
+      }
+    });
   }
 });

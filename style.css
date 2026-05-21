@@ -528,3 +528,9 @@ h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 500; line-height: 1
     display: none; /* Hide tooltip on touch devices to avoid clutter */
   }
 }
+
+/* Invalid form field validation styling */
+.form-field input.invalid {
+  border-color: #ff4a4a !important;
+  background-color: rgba(255, 74, 74, 0.05) !important;
+}
