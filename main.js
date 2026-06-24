@@ -36,7 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const id = btn.getAttribute('data-scroll-to');
       const el = document.getElementById(id);
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const headerOffset = 80;
+        const elementPosition = el.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
         closeMenu();
       }
     });
@@ -54,10 +61,89 @@ document.addEventListener('DOMContentLoaded', () => {
 
   reveals.forEach(el => observer.observe(el));
 
+  // --- Lazer gallery ---
+  const lazerMain = document.getElementById('lazer-gallery-main');
+  const lazerThumbs = document.getElementById('lazer-gallery-thumbs');
+  if (lazerMain && lazerThumbs) {
+    const thumbs = lazerThumbs.querySelectorAll('img');
+    thumbs.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        const mainImg = lazerMain.querySelector('img');
+        mainImg.src = thumb.src;
+        mainImg.alt = thumb.alt;
+        thumbs.forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      });
+    });
+  }
+
+  // --- Plantas carousel ---
+  const plantasTrack = document.getElementById('plantas-track');
+  const plantasDots = document.getElementById('plantas-dots');
+  const plantasPrev = document.getElementById('plantas-prev');
+  const plantasNext = document.getElementById('plantas-next');
+
+  if (plantasTrack && plantasDots) {
+    const slides = plantasTrack.querySelectorAll('.plantas__slide');
+    let currentSlide = 0;
+
+    // Generate dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = `plantas__dot${i === 0 ? ' is-active' : ''}`;
+      dot.setAttribute('aria-label', `Planta ${i + 1}`);
+      dot.addEventListener('click', () => goToSlide(i));
+      plantasDots.appendChild(dot);
+    });
+
+    function goToSlide(index) {
+      slides[currentSlide].classList.remove('is-active');
+      plantasDots.children[currentSlide].classList.remove('is-active');
+      currentSlide = (index + slides.length) % slides.length;
+      slides[currentSlide].classList.add('is-active');
+      plantasDots.children[currentSlide].classList.add('is-active');
+    }
+
+    if (plantasPrev) plantasPrev.addEventListener('click', () => goToSlide(currentSlide - 1));
+    if (plantasNext) plantasNext.addEventListener('click', () => goToSlide(currentSlide + 1));
+  }
+
+  // --- Detalhes tabs ---
+  const detalheTabs = document.querySelectorAll('.detalhes__tab');
+  const detalhePanels = document.querySelectorAll('.detalhes__panel');
+
+  detalheTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const idx = tab.getAttribute('data-tab');
+
+      detalheTabs.forEach(t => {
+        t.classList.remove('is-active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      detalhePanels.forEach(p => {
+        p.classList.remove('is-active');
+        p.setAttribute('hidden', '');
+      });
+
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected', 'true');
+      const panel = document.getElementById(`panel-${idx}`);
+      if (panel) {
+        panel.classList.add('is-active');
+        panel.removeAttribute('hidden');
+      }
+    });
+  });
+
   // --- Phone mask ---
   document.querySelectorAll('input[type="tel"]').forEach(input => {
     input.addEventListener('input', (e) => {
-      let v = e.target.value.replace(/\D/g, '').slice(0, 11);
+      let v = e.target.value.replace(/\D/g, '');
+      // If the number starts with Brazil's country code 55 and is longer than 11 digits, strip it
+      if (v.length > 11 && v.startsWith('55')) {
+        v = v.slice(2);
+      }
+      v = v.slice(0, 11);
       if (v.length > 6) v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
       else if (v.length > 2) v = `(${v.slice(0,2)}) ${v.slice(2)}`;
       else if (v.length > 0) v = `(${v}`;
